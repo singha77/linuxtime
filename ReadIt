@@ -1,0 +1,13 @@
+##KMBishop
+##v0.01
+set urls
+
+rm linksfile;
+
+#for i in $(cat linksfile);
+while read -p "Please paste your URLs with a right click: " urls;
+#echo $urls | tee linksfile;
+
+do echo "$(curl -s -w " %{http_code}\\n" $i -o '/dev/null') - $i"; done
+echo "Please paste your URLs with a right click: "
+echo "When you are done, press Ctrl + D"
