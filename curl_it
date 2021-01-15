@@ -1,0 +1,3 @@
+## Simple curl loop, but it requires a file "linksfile" that is managed by the user.
+
+for i in $(cat linksfile); do echo "$(curl -s -w " %{http_code}\\n" $i -o '/dev/null') - $i"; done
