@@ -1,0 +1,6 @@
+## This requires creating a file that already has URLs in it.  Ideally, sorting out ReadIt will make a file managed by the user unnecessary
+
+awk -F/ '{print $3}' linksfile > hostfile;
+
+for i in $(cat hostfile);
+do echo "$(host $i)" | tee host_output; done
