@@ -1,0 +1,52 @@
+#
+echo -e  ' \t'  "  ____                 _____               _       _   _             "
+echo -e  ' \t'  " / ___|__ _ ___  ___  | ____|___  ___ __ _| | __ _| |_(_) ___  _ __  "
+echo -e  ' \t'  "| |   / _| / __|/ _ \ |  _| / __|/ __/ _| | |/ _| | __| |/ _ \| |_ \ "
+echo -e  ' \t'  "| |__| (_| \__ \  __/ | |___\__ \ (_| (_| | | (_| | |_| | (_) | | | |"
+echo -e  ' \t'  " \____\__|_|___/\___| |_____|___/\___\__|_|_|\__|_|\__|_|\___/|_| |_|"
+echo -e  ' \t' "                                                                     "
+echo -e  ' \t'  " _  __                         "
+echo -e  ' \t'  "| |/ /___  ___ _ __   ___ _ __ "
+echo -e  ' \t'  "| | // _ \/ _ \ |_ \ / _ \ |__|"
+echo -e  ' \t'  "| | \  __/  __/ |_) |  __/ |   "
+echo -e  ' \t'  "|_|\_\___|\___| |__/ \___|_|   "
+echo -e  ' \t'  "              |_|              "
+echo
+echo
+#creates the file that holds all the case numbers
+touch case_escalation.txt &> /dev/null
+cp case_escalation.txt case_escalation.txt_bkup_b4
+
+echo "This script is used to help keep track of the cases that you have escalated!"
+#For promotion maybe? :)
+echo
+echo
+
+
+read -p "Enter the case number that was escalated to T3 or High Priority: " case 
+#date variable is for when the case was added
+dateadd=date
+casedate="$( date +%Y%m%d ) | $case"
+
+if [ $case = null ]
+then
+	echo
+	echo "Nothing has been entered"
+else
+	echo "Adding $case to the collection!"
+	echo $casedate >> case_escalation.txt
+fi
+
+echo
+total=$(wc -l  case_escalation.txt)
+
+echo "The total number of cases escalated are: $total" 
+echo
+echo "Showing the last 3 cases added to the escalated case collection!"
+echo "========================"
+echo "Date added | Case number"
+echo "========================"
+
+tail -n3 case_escalation.txt
+
+cp case_escalation.txt case_escalation.txt_bkup_aft
