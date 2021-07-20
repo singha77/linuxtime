@@ -1,47 +1,81 @@
-Hello,
+#!/bin/bash
+# author: drampil@
+# edited by: keruvinb@
 
-Thank you for submitting your abuse report. We have begun our investigation into the source of the activity or content you reported.
+help_function(){
+day=$(date +%A)
 
-We've determined that an Amazon EC2 instance was running at the IP address you provided in your abuse report. We have reached out to our customer to determine the nature and cause of this activity or content in your report.
+if [[ $day == "Sunday" ]]
+then
+        echo "Will F., Jose, and Karim"
+elif [[ $day == "Monday" ]]
+then
+        echo "K, Shams, and Devon"
+elif [[ $day == "Tuesday" ]]
+then
+        echo "Garrett, Hamza, and Christopher"
+elif [[ $day == "Wednesday" ]]
+then
+        echo "Corey, Jim, and Rabia"
+elif [[ $day == "Thursday" ]]
+then
+        echo "Ajeet, Marc , and Ellie"
+elif [[ $day == "Friday" ]]
+then
+        echo "Rene, Shawntel, and Jacob"
+elif [[ $day == "Saturday" ]]
+then
+        echo "Kenneth, Christabel, and David P."
+else
+        echo "error"
+fi
+}
 
-We will investigate your complaint to determine what additional actions, if any, need to be taken in this case. We may notify you during our investigation if our customer requires more information from you to complete their troubleshooting of the issue. Our customer may reply stating that the activity or content is expected and instructions on how to prevent the activity or manually remove the content, as well. If you wish to provide additional information to us or our customer regarding this case, please reply to this email.
+triage_function() {
+day=$(date +%A)
 
-Please note that if we determine the activity or content to not be abusive, we will notify you and resolve the case; we may refrain from communicating further, in that case.
+if [[ $day == "Sunday" ]]
+then
+        echo "Will F, Ellie, Jose, and Omar"
+elif [[ $day == "Monday" ]]
+then
+        echo "Ajeet, Karim, and Hamza"
+elif [[ $day == "Tuesday" ]]
+then
+        echo "Shams, Jacob, and Shawntel"
+elif [[ $day == "Wednesday" ]]
+then
+        echo "Garrett, Rabia, and Christopher"
+elif [[ $day == "Thursday" ]]
+then
+        echo "Kenny J, K, and Devon"
+elif [[ $day == "Friday" ]]
+then
+        echo "David P, Rene, and Marc"
+elif [[ $day == "Saturday" ]]
+then
+        echo "Jim, Christabel, and Corey"
+else
+        echo "error"
+fi
+}
 
-We will notify you once this case has been marked resolved. Thank you for alerting us to this issue.
+weather_function(){
+curl -s https://darksky.net/forecast/38.9379,-77.3624/us12/en | grep -w "summary swap\|low\|high" | sed 's/&nbsp;//g' | sed s'/<[^>]*>//g' | sed 's/^ *//g';
+}
 
-Regards,
-AWS Trust & Safety
-Amazon Web Services, LLC
+echo "Morning Report"
+date +%A
+date +"%dth %B, %Y"
+echo
+echo "Weather"
+weather_function
+echo
+echo "Assigned to Help room"
+help_function
+echo
 
-Case number: 56844101017
-
-Your original report:
-
- * Log Extract: 
-<<<
-// Notes I collected from myself and various coworkers.  The IP address has posed as various domains over the last several days sending phishing e-mails to highly specific e-mail addresses within my organization.
-
-Domain 1) engencia-online.com
- // DNS/Lookup results no longer returning after I started poking, but I am 90% sure it shared the 52.73.145.247 IP address when I received the e-mail.  I initially looked up this domain, but several minutes later I stopped getting results.
-// Sender: "Jon C"
-// Email contained a tracking pixel <http://www.egencia-online.com/pixel_93cdbd4d03.gif> 
-// Attachment: "RFQ0089521.docx"
-
-Domain 2) byt.im
-34.201.84.154
-52.73.145.247
-txt: "v=spf1 mx a ip4:107.23.16.222/32 ip4:54.173.83.138/32 ~all" 
-// Sender "FIKA ANGGI"
-// Attachment: "materails.docx"
-
-Domain 3) SHIPPINGUPDATE.NET
-34.201.84.154
-// Sender "DHL Parcel"
-// Attachment "Private file #015983.docx"
->>>
-
- * Comments: 
-<<<
-
->>>
+#Help channel output
+echo "Assigned to Triage"
+triage_function
+echo
