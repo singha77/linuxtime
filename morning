@@ -2,7 +2,7 @@
 # author: drampil@
 # edited by: keruvinb@
 
-help_function(){
+help_function() {
 day=$(date +%A)
 
 if [[ $day == "Sunday" ]]
