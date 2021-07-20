@@ -1,0 +1,81 @@
+ 	#!/bin/bash
+	# author: drampil@
+	# edited by: keruvinb@
+
+help_function(){
+day=$(date +%A)
+
+if [[ $day == "Sunday" ]]
+then
+        echo "Will F., Jose, and Karim"
+elif [[ $day == "Monday" ]]
+then
+        echo "K, Shams, and Devon"
+elif [[ $day == "Tuesday" ]]
+then
+        echo "Garrett, Hamza, and Christopher"
+elif [[ $day == "Wednesday" ]]
+then
+        echo "Corey, Jim, and Rabia"
+elif [[ $day == "Thursday" ]]
+then
+        echo "Ajeet, Marc , and Ellie"
+elif [[ $day == "Friday" ]]
+then
+        echo "Rene, Shawntel, and Jacob"
+elif [[ $day == "Saturday" ]]
+then
+        echo "Kenneth, Christabel, and David P."
+else
+        echo "error"
+fi
+}
+
+triage_function() {
+day=$(date +%A)
+
+if [[ $day == "Sunday" ]]
+then
+        echo "Will F, Ellie, Jose, and Omar"
+elif [[ $day == "Monday" ]]
+then
+        echo "Ajeet, Karim, and Hamza"
+elif [[ $day == "Tuesday" ]]
+then
+        echo "Shams, Jacob, and Shawntel"
+elif [[ $day == "Wednesday" ]]
+then
+        echo "Garrett, Rabia, and Christopher"
+elif [[ $day == "Thursday" ]]
+then
+        echo "Kenny J, K, and Devon"
+elif [[ $day == "Friday" ]]
+then
+        echo "David P, Rene, and Marc"
+elif [[ $day == "Saturday" ]]
+then
+        echo "Jim, Christabel, and Corey"
+else
+        echo "error"
+fi
+}
+
+weather_function(){
+curl -s https://darksky.net/forecast/38.9379,-77.3624/us12/en | grep -w "summary swap\|low\|high" | sed 's/&nbsp;//g' | sed s'/<[^>]*>//g' | sed 's/^ *//g';
+}
+
+echo "Morning Report"
+date +%A
+date +"%dth %B, %Y"
+echo
+echo "Weather"
+weather_function
+echo
+echo "Assigned to Help room"
+help_function
+echo
+
+#Help channel output
+echo "Assigned to Triage"
+triage_function
+echo
