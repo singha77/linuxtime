@@ -7,7 +7,7 @@ day=$(date +%A)
 
 if [[ $day == "Sunday" ]]
 then
-        echo "Will F., Jose, and Karim"
+        echo "Will F., Jose"
 elif [[ $day == "Monday" ]]
 then
         echo "K, Shams"
@@ -39,7 +39,7 @@ then
         echo "Will F, Ellie, and Jose"
 elif [[ $day == "Monday" ]]
 then
-        echo "Ajeet, Karim, and Hamza"
+        echo "Ajeet, Hamza"
 elif [[ $day == "Tuesday" ]]
 then
         echo "Shams, Jacob, and Shawntel"
@@ -48,7 +48,7 @@ then
         echo "Garrett, Rabia, and Christopher"
 elif [[ $day == "Thursday" ]]
 then
-        echo "Kenny J, K"
+        echo ""
 elif [[ $day == "Friday" ]]
 then
         echo "David P, Rene, and Marc"
