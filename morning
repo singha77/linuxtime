@@ -1,6 +1,6 @@
 #!/bin/bash
-# author: drampil@
-# edited by: keruvinb@
+# author: D.R.
+# edited by: K.B. + A.S.
 
 help_function() {
 day=$(date +%A)
@@ -25,7 +25,7 @@ then
         echo "Garrett, Shawntel, and Jacob"
 elif [[ $day == "Saturday" ]]
 then
-        echo "Corey, Marc, and David P."
+        echo "Marc and David P."
 else
         echo "error"
 fi
@@ -54,7 +54,7 @@ then
         echo "David P, Christopher, and Marc"
 elif [[ $day == "Saturday" ]]
 then
-        echo "Shawntel, Rabia, and Corey"
+        echo "Rabia and Corey"
 else
         echo "error"
 fi
