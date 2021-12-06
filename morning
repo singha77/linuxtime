@@ -13,7 +13,7 @@ then
         echo "Will F. and Ellie"
 elif [[ $day == "Tuesday" ]]
 then
-        echo "Garrett, David P., and Christopher"
+        echo "Garrett and Christopher"
 elif [[ $day == "Wednesday" ]]
 then
         echo "Corey, Jacob, and Ellie"
@@ -25,7 +25,7 @@ then
         echo "Garrett, Shawntel, and Jacob"
 elif [[ $day == "Saturday" ]]
 then
-        echo "Marc and David P."
+        echo "Marc and Rabia"
 else
         echo "error"
 fi
@@ -48,10 +48,10 @@ then
         echo "Garrett, Rabia, and Christopher"
 elif [[ $day == "Thursday" ]]
 then
-        echo "Corey, Will F., and David P"
+        echo "Corey and Will F."
 elif [[ $day == "Friday" ]]
 then
-        echo "David P, Christopher, and Marc"
+        echo "Christopher and Marc"
 elif [[ $day == "Saturday" ]]
 then
         echo "Rabia and Corey"
