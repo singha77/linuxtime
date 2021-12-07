@@ -25,7 +25,7 @@ then
         echo "Shawntel and Jacob"
 elif [[ $day == "Saturday" ]]
 then
-        echo "Shawntel, Rabia, and Marc
+        echo "Shawntel, Rabia, and Marc"
 else
         echo "error"
 fi
