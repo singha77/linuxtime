@@ -10,7 +10,7 @@ then
         echo "Will F., Jose, and Ellie"
 elif [[ $day == "Monday" ]]
 then
-        echo "Will F., Shams, and Ajeet"
+        echo "Will F. and Ellie"
 elif [[ $day == "Tuesday" ]]
 then
         echo "Garrett and Christopher"
