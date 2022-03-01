@@ -60,6 +60,25 @@ else
 fi
 }
 
+
+simt_function() {
+day=$(date +%A)
+
+#pod variables below
+pod1="Sadia, Kianna, Shawntel, Garrett"
+pod2="Will, Rabia, Marc"
+pod3="Corey, Jacob, Shams, Ajeet"
+pod4="Curtly, Michael, Chris, Jose"
+
+
+echo $pod1
+echo
+echo $pod2
+echo
+echo $pod3
+}
+
+
 weather_function(){
 curl -s https://darksky.net/forecast/38.9379,-77.3624/us12/en | grep -w "summary swap\|low\|high" | sed 's/&nbsp;//g' | sed s'/<[^>]*>//g' | sed 's/^ *//g';
 }
@@ -78,4 +97,9 @@ echo
 #Help channel output
 echo "Assigned to Triage"
 triage_function
+echo
+
+#Sim Ticket
+echo "Assigned to help the SIM Ticket queue this week"
+simt_function
 echo
